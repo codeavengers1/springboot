@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 import com.demo.spring.entity.Emp;
 
-@Component
+//@Component
 public class DemoRunner implements CommandLineRunner {
 
 	@PersistenceContext
