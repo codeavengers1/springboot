@@ -3,15 +3,14 @@ package com.demo.spring;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @SpringBootApplication
-@EnableSwagger2
+@EnableZuulProxy
 @EnableEurekaClient
-public class EmpDataServiceApplication {
+public class ZuulProxyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EmpDataServiceApplication.class, args);
+		SpringApplication.run(ZuulProxyApplication.class, args);
 	}
 }

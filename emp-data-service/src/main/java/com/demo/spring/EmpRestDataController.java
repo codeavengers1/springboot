@@ -16,10 +16,18 @@ import org.springframework.web.bind.annotation.RestController;
 import com.demo.spring.entity.Emp;
 import com.demo.spring.repo.EmpRepository;
 
+import io.swagger.annotations.Api;
+
 @RestController
+@Api
 public class EmpRestDataController {
 	@Autowired
 	EmpRepository repo;
+	
+	@RequestMapping(path="/greet/{name}")
+	public String greet(@PathVariable("name") String name) {
+		return "Wecome to Spring REST, " + name;
+	}
 
 	@RequestMapping(path = "/emp/find/{id}", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE })

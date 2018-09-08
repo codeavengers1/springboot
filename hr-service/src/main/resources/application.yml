@@ -1,0 +1,27 @@
+server:
+  port: 8090
+
+spring:
+  application:
+      name: hr-service
+#eureka:
+ # client:
+  #  register-with-eureka: true
+  #  service-url:
+   #    defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - refresh
+        - hystrix.stream
+        - health
+        
+emp-service:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:8081,localhost:8082,localhost:8083
+    ServerListRefreshInterval: 15000
